@@ -105,7 +105,9 @@
         }
     }
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     background: #e5e5e0;
     color: black;
