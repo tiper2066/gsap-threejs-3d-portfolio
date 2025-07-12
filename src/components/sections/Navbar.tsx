@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'; //   useEffect 훅
 import { socials } from '@/constants'; //  socials 데이터 가져옴
 import gsap from 'gsap'; //  GSAP 라이브러리
 import { useGSAP } from '@gsap/react'; //  useGSAP Hook
-import Link from 'next/link'; // *************************** next.js Link 라이브러리
+import Link from 'next/link'; //  next.js Link 라이브러리
 
 const Navbar = () => {
     const navRef = useRef<HTMLDivElement>(null); // nav 요소 참조
@@ -113,11 +113,11 @@ const Navbar = () => {
         <>
             {/* 위치 고정, 수직패널 형태, 상하 끝배치(메뉴상단, 푸터는 하단), 패딩 112 40, 간격 40, 768이상에서 너비 50%, left 50%(우측 절반영역차지) */}
             <nav
-                className='fixed z-50 flex flex-col justify-between w-full h-full px-10 py-28 gap-y-10 bg-black text-white/80 uppercase md:w-1/2 md:left-1/2'
+                className="fixed z-50 flex flex-col justify-between w-full h-full px-10 py-28 gap-y-10 bg-black text-white/80 uppercase md:w-1/2 md:left-1/2"
                 ref={navRef}
             >
                 {/* 메뉴그룹 : 수직정렬, 너비가 클수록 글자도 커지게함  */}
-                <div className='flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl'>
+                <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl">
                     {['home', 'services', 'about', 'work', 'contact'].map(
                         (section, index) => (
                             <div
@@ -128,7 +128,7 @@ const Navbar = () => {
                                 }}
                             >
                                 <Link
-                                    className='transition-all duration-300 cursor-pointer hover:text-white'
+                                    className="transition-all duration-300 cursor-pointer hover:text-white"
                                     href={`#${section}`}
                                 >
                                     {section}
@@ -140,29 +140,29 @@ const Navbar = () => {
                 {/* 푸터(이메일 / SNS), 768이상 수평정렬 */}
                 <div
                     ref={contactRef}
-                    className='flex flex-col flex-wrap justify-between gap-8 md:flex-row'
+                    className="flex flex-col flex-wrap justify-between gap-8 md:flex-row"
                 >
-                    <div className='font-light'>
+                    <div className="font-light">
                         {/* 자간을 넓게하고, 반투명 흰색 */}
-                        <p className='tracking-wider text-white/50'>E-mail</p>
+                        <p className="tracking-wider text-white/50">E-mail</p>
                         {/* 자간을 최대로 하고, 소문자, 줄바꿈 시 줄바꿈 지점을 가능한 어색하지 않게함 */}
-                        <p className='text-xl tracking-widest lowercase text-pretty'>
+                        <p className="text-xl tracking-widest lowercase text-pretty">
                             JohnDoe@gmail.com
                         </p>
                     </div>
-                    <div className='font-light'>
-                        <p className='tracking-wider text-white/50'>
+                    <div className="font-light">
+                        <p className="tracking-wider text-white/50">
                             Social Media
                         </p>
                         {/* 수직 정렬, 768 이상에서 수평정렬 */}
-                        <div className='flex flex-col flex-wrap md:flex-row gap-x-2'>
+                        <div className="flex flex-col flex-wrap md:flex-row gap-x-2">
                             {socials.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.href}
-                                    target='_blank'
+                                    target="_blank"
                                     // sm 사이즈, 대문자, 자간 최대, 줄간격 넉넉하게, 마우스오버 시 흰색, 색변화 0.3s 동안 부드럽게.
-                                    className='text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300'
+                                    className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
                                 >
                                     {'{ '}
                                     {social.name}
@@ -175,8 +175,8 @@ const Navbar = () => {
             </nav>
             {/*  햄버거 아이콘 */}
             <div
-                className='fixed top-4 right-10 z-50 flex flex-col items-center justify-center gap-1 
-                transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20'
+                className="fixed top-4 right-10 z-50 flex flex-col items-center justify-center gap-1 
+                transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20"
                 onClick={toggleMenu} //  햄버거 아이콘 토글 핸들러 함수 적용
                 //  showBurger 상태값에 따라 슬라이딩시 아이콘을 clip-path 스타일 속성을 이용해서 보이고 숨김
                 style={
@@ -187,11 +187,11 @@ const Navbar = () => {
             >
                 {/* 8 x 0.5 길이의 흰색라인, 양끝 둥근 모서리, 기준점 중앙 */}
                 <span
-                    className='block w-8 h-0.5 bg-white rounded-full origin-center'
+                    className="block w-8 h-0.5 bg-white rounded-full origin-center"
                     ref={topLineRef}
                 ></span>
                 <span
-                    className='block w-8 h-0.5 bg-white rounded-full origin-center'
+                    className="block w-8 h-0.5 bg-white rounded-full origin-center"
                     ref={bottomLineRef}
                 ></span>
             </div>
